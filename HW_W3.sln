@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30106_abstract", "HW_301
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30102_Constructors", "HW_30102_Constructors\HW_30102_Constructors.csproj", "{EA05365C-2728-4599-A58E-10A6C1760076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_30201_Generic", "HW_30201_Generic\HW_30201_Generic.csproj", "{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EA05365C-2728-4599-A58E-10A6C1760076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA05365C-2728-4599-A58E-10A6C1760076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA05365C-2728-4599-A58E-10A6C1760076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
