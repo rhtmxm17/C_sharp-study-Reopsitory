@@ -79,7 +79,7 @@ public void DoDouble(IDoubleable val)
 이 경우 DoDouble()의 인자로 Point형 변수를 넣어주면 IDoubleable 타입으로 박싱이 일어난다.
 (DoDouble의 인자로 ref IDoubleable를 받는 시도를 해봤지만 이 함수는 ref Point를 넣을 수 없었다)
 
-```
+```C#
 public static void DoDoubleGeneric<T>(ref T val) where T : IDoubleable
 {
     val.Doubleself();
