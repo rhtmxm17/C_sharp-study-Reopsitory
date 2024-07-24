@@ -40,13 +40,18 @@
 
         class Character
         {
-            private int level;
-            private float hp;
-            private float movementSpeed;
-            private float attackStats;
+            protected int level = 0;
+            protected float hp = 10f;
+            protected float movementSpeed = 1f;
+            protected float attackStats = 5f;
 
             private Position position;
             private Direction direction;
+
+            public Character()
+            {
+                direction = Direction.Down;
+            }
 
             public void MoveForward(float time)
             {
@@ -78,23 +83,62 @@
 
             public void Attack(Character target)
             {
-                target.Attacked(attackStats);
+                target.TakeDamage(attackStats);
             }
 
-            public void Attacked(float damage)
+            public void TakeDamage(float damage)
             {
                 hp -= damage;
-                if(hp < 0f)
+                if(hp <= 0f)
                 {
-                    hp = 0f;
-                    Console.WriteLine("사망 메세지");
+                    Dead();
                 }
+            }
+
+            public virtual void Dead()
+            {
+                hp = 0f;
+                Console.WriteLine("사망 메세지");
+            }
+        }
+
+        class Monster : Character
+        {
+            private string name = "이름 없는 몬스터";
+            public Monster(string name) : base()
+            {
+                this.name = name;
+            }
+
+            public override void Dead() 
+            {
+                Console.Write($"{name} 처치");
+                if (hp < 0f)
+                {
+                    Console.Write($"(오버킬: {-hp})");
+                    hp = 0f;
+                }
+            }
+        }
+
+        class PlayerCharacter : Character
+        {
+            public PlayerCharacter() : base()
+            {
+                level = 1;
+                hp = 20f;
+                movementSpeed = 5f;
+                attackStats = 8f;
             }
         }
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Character monster = new Monster("슬라임");
+            Character player = new PlayerCharacter();
+
+            player.Attack(monster);
+            player.Attack(monster);
         }
     }
 }
