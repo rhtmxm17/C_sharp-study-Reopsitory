@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루�
 		study_확장 메서드와 프로퍼티, 연산자 재정의.md = study_확장 메서드와 프로퍼티, 연산자 재정의.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_30204_Extension", "HW_30204_Extension\HW_30204_Extension.csproj", "{4A8B6054-E0AD-423C-931B-4059D35311C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{7D03D78C-5730-4D08-938B-A32F2E05D66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D03D78C-5730-4D08-938B-A32F2E05D66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D03D78C-5730-4D08-938B-A32F2E05D66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8B6054-E0AD-423C-931B-4059D35311C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8B6054-E0AD-423C-931B-4059D35311C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8B6054-E0AD-423C-931B-4059D35311C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8B6054-E0AD-423C-931B-4059D35311C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
