@@ -25,7 +25,7 @@ MyDelegate myDel;
 ```C#
 bool LeftIsBigger(int left, int right)
 {
-    return a > b;
+    return left > right;
 }
 
 // 매개변수와 반환형이 정의된 것과 일치하는 함수만 가능
@@ -58,7 +58,7 @@ void MyAction(int a, bool b) { }
 아래는 플레이어가 공격 받았을 경우 현재 상태에 따라 피격 또는 반격을 하는 예시를 생각해보았다.
 
 ```C#
-class Player
+public class Player
 {
     private Action<Skill, Character> onHitted;
 
@@ -77,9 +77,11 @@ class Player
         onHitted = TakeDamage;
     }
 
-    private void TakeDamage(Skill atk, Character attacker) {  }
-    private void CounterAttack(Skill takenAtk, Character attacker) {  }
+    private void TakeDamage(Skill atk, Character attacker) { }
+    private void CounterAttack(Skill takenAtk, Character attacker) { }
 }
+public class Skill { }
+public class Character { }
 ```
 
 여기서는 단순하게 onHitted 델리게이트의 내용을 치환했지만, 필요에 따라 체인
@@ -105,17 +107,17 @@ void Sample()
 int Most(int[] array, Func<int, int, bool> compare)
 {
     // 예외
-    if (array.length == 0)
+    if (array.Length == 0)
         return 0;
-    if (array.length == 1)
+    if (array.Length == 1)
         return array[0];
 
-    int most = compare(array[0], array[1]);
-    for (int i = 1; i < array.length; i++)
+    int most = array[0];
+    for (int i = 0; i < array.Length; i++)
     {
         // 대상 내용(array[i])이 기존값(most)보다 더
         // 기준(compare)을 만족한다면 대체
-        if(compare(array[i], most))
+        if (compare(array[i], most))
             most = array[i];
     }
     return most;
