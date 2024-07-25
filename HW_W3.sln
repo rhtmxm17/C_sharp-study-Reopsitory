@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30102_Constructors", "HW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30201_Generic", "HW_30201_Generic\HW_30201_Generic.csproj", "{AE77E555-DE9C-4F04-B937-EF7FAF664EBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_30203_delegate", "HW_30203_delegate\HW_30203_delegate.csproj", "{7D03D78C-5730-4D08-938B-A32F2E05D66C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30203_delegate", "HW_30203_delegate\HW_30203_delegate.csproj", "{7D03D78C-5730-4D08-938B-A32F2E05D66C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{45D39593-E1C1-4888-9C5C-794F5CB6A496}"
+	ProjectSection(SolutionItems) = preProject
+		study_확장 메서드와 프로퍼티, 연산자 재정의.md = study_확장 메서드와 프로퍼티, 연산자 재정의.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

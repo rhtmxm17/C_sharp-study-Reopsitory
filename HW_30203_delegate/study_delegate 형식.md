@@ -109,11 +109,9 @@ int Most(int[] array, Func<int, int, bool> compare)
     // 예외
     if (array.Length == 0)
         return 0;
-    if (array.Length == 1)
-        return array[0];
 
     int most = array[0];
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 1; i < array.Length; i++)
     {
         // 대상 내용(array[i])이 기존값(most)보다 더
         // 기준(compare)을 만족한다면 대체
@@ -137,6 +135,16 @@ bool Less(int left, int right)
 ## 실험
 
 등록할 함수에 기본 매개변수가 있다면?
+
+```C#
+static int Sum(int val1, int val2, int val3 = 0)
+{
+    return val1 + val2 + val3;
+}
+
+// 대입 불가능
+// Func<int, int, int> func = Sum;
+```
 
 ## 이벤트
 

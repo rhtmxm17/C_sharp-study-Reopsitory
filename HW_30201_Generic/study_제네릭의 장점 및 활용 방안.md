@@ -92,3 +92,9 @@ public static void DoDoubleGeneric<T>(ref T val) where T : IDoubleable
 이러한 방식과 그 연장을 극한으로 사용하지 않았을까?
 
 테스트한 코드: [BoxingStudy.cs](./BoxingStudy.cs)
+
+## template(C++)과 generic(C#)
+
+사용법이 유사하지만 구현 방식이 다르다
+template는 <>안에 설정한 자료형 마다 컴파일 단계에서 지정한 자료형으로 대체한 코드를 제작해주는 방식
+generic은 <>의 자료형에 허용한 모든 자료형이 들어올 수 있는 코드 하나를 만들어놓고 컴파일 단계에서는 코드가 사용될 때 지정된 자료형이 사용되었는지 검사하는 방식
