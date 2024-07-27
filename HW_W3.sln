@@ -15,12 +15,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30203_delegate", "HW_302
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{45D39593-E1C1-4888-9C5C-794F5CB6A496}"
 	ProjectSection(SolutionItems) = preProject
+		study_immutable과 string.md = study_immutable과 string.md
+		study_자료구조.md = study_자료구조.md
 		study_확장 메서드와 프로퍼티, 연산자 재정의.md = study_확장 메서드와 프로퍼티, 연산자 재정의.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30204_Extension", "HW_30204_Extension\HW_30204_Extension.csproj", "{4A8B6054-E0AD-423C-931B-4059D35311C8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW_30302_List", "HW_30302_List\HW_30302_List.csproj", "{D2C625BE-EA8F-4A25-BA3F-D6385A677226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_30302_LinkedList", "HW_30302_LinkedList\HW_30302_LinkedList.csproj", "{E7990D56-8408-4EED-8FEA-458F9B044A84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +60,10 @@ Global
 		{D2C625BE-EA8F-4A25-BA3F-D6385A677226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2C625BE-EA8F-4A25-BA3F-D6385A677226}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2C625BE-EA8F-4A25-BA3F-D6385A677226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7990D56-8408-4EED-8FEA-458F9B044A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7990D56-8408-4EED-8FEA-458F9B044A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7990D56-8408-4EED-8FEA-458F9B044A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7990D56-8408-4EED-8FEA-458F9B044A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

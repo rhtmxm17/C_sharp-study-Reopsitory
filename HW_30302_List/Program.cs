@@ -12,8 +12,6 @@
 
  */
 
-using System;
-
 namespace HW_30302_List
 {
     internal class Program
@@ -37,7 +35,7 @@ namespace HW_30302_List
                 while (isNumber == false)
                 {
                     char key = Console.ReadKey(true).KeyChar;
-                    if('0' <= key && key <= '9')
+                    if ('0' <= key && key <= '9')
                     {
                         isNumber = true;
                         input = key - '0';
@@ -45,7 +43,9 @@ namespace HW_30302_List
                 }
 
                 // 수행 단계
-                if(input == 0)
+                Console.Clear();
+
+                if (input == 0)
                 {
                     Item item = CreateRandomItem(random);
                     bool result = inventory.AddItem(item);
@@ -76,14 +76,32 @@ namespace HW_30302_List
             }
         }
 
-        static int counter = 0;
         static Item CreateRandomItem(Random source)
         {
-            Item item = new Item();
+            Item item;
 
-            counter++;
-            item.Name = $"{counter}번째 생성된 아이템";
+            int randVal = source.Next(5);
 
+            switch (randVal)
+            {
+                case 0:
+                    item = new Potion() { Name = "상처치료약" };
+                    break;
+                case 1:
+                    item = new Weapon() { Name = "아포칼립스 Type-Void 기어" };
+                    break;
+                case 2:
+                    item = new Armor() { Name = "내한 팰 금속 갑옷" };
+                    break;
+                case 3:
+                    item = new Accessory() { Name = "울부짖는 환상의 귀걸이" };
+                    break;
+                case 4:
+                    item = new Food() { Name = "황금 사과" };
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
             return item;
         }
 
