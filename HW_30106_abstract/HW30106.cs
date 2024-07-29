@@ -56,11 +56,14 @@ namespace HW_30106_abstract
         protected int maxBullet;
         protected int curBullet;
 
+        protected int bulletSupplyAmount;
+
         public Weapon(string name, int maxBullet)
         {
             this.name = name;
             this.maxBullet = maxBullet;
             this.curBullet = maxBullet;
+            this.bulletSupplyAmount = maxBullet;
         }
 
         public virtual void Shoot()
@@ -78,14 +81,19 @@ namespace HW_30106_abstract
                 Console.WriteLine($"{name} 소진");
         }
 
-        public abstract void GainAdditionalBullet();
+        public void GainAdditionalBullet()
+        {
+            curBullet += bulletSupplyAmount;
+            if (curBullet > maxBullet)
+                curBullet = maxBullet;
+        }
     }
 
     public class HeavyMachinegun : Weapon
     {
         public HeavyMachinegun() : base("HeavyMachinegun", 200)
         {
-
+            bulletSupplyAmount = 100;
         }
 
         public override void Shoot()
@@ -103,20 +111,13 @@ namespace HW_30106_abstract
         {
             Console.Write($"HM발사{shootPattern}");
         }
-
-        public override void GainAdditionalBullet()
-        {
-            curBullet += 100;
-            if (curBullet > maxBullet)
-                curBullet = maxBullet;
-        }
     }
 
     public class RocketLauncher : Weapon
     {
         public RocketLauncher() : base("Rocket Launcher", 30)
         {
-
+            bulletSupplyAmount = 10;
         }
 
         public override void Shoot()
@@ -134,29 +135,16 @@ namespace HW_30106_abstract
         {
             return 1;
         }
-
-        public override void GainAdditionalBullet()
-        {
-            curBullet += 10;
-            if (curBullet > maxBullet)
-                curBullet = maxBullet;
-        }
     }
 
     public class FlameShot : Weapon
     {
         public FlameShot() : base("Flame Shot", 30)
         {
-
+            bulletSupplyAmount = 10;
         }
 
         // Shoot() 재정의 하지 않음으로 기본 동작 수행
 
-        public override void GainAdditionalBullet()
-        {
-            curBullet += 10;
-            if (curBullet > maxBullet)
-                curBullet = maxBullet;
-        }
     }
 }
