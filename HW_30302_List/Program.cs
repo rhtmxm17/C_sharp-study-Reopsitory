@@ -16,6 +16,14 @@ namespace HW_30302_List
 {
     internal class Program
     {
+        // 심화 과제로 만든 MyList 테스트
+        // 이 영역에서 List의 이름이 이 클래스를 의미하게 함
+        public class List<T> : MyList<T>
+        {
+            public List() : base() { }
+            public List(int capacity) : base(capacity) { }
+        }
+
         static void Main(string[] args)
         {
             Random random = new Random();
