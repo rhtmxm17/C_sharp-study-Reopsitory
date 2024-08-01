@@ -2,6 +2,13 @@
 {
     internal class Program
     {
+        // 심화 과제로 만든 MyLinkedList 테스트
+        // 이 영역에서 LinkedList의 이름이 이 클래스를 의미하게 함
+        class LinkedList<T> : MyLinkedList<T>
+        {
+
+        }
+
         static void Main(string[] args)
         {
             int size;
@@ -44,7 +51,7 @@
                 }
 
                 // 순열 계산
-                LinkedListNode<int> buffer = cycle.First;
+                var buffer = cycle.First;
                 while (cycle.Count > 0)
                 {
                     for (int i = 0; i < interval - 1; i++)
