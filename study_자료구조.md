@@ -28,13 +28,22 @@
 * 접근 : 노드간의 링크를 기반으로 한 자료구조이므로 중간의 노드에 접근하기 위해서는 노드를 하나씩 타고 넘어가야 한다. 그래서 인덱스를 통한 접근 자체를 기본적으로 지원하지 않는다.
 * 탐색 `Find()` O(n) : List와 마찬가지로 데이터 순서에 제약이 없는 자료구조이므로 모든 데이터를 하나씩 순회해서 탐색해야 한다.
 
-## [Stack\<T>](https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.stack-1?view=net-8.0)
+## [Stack\<T>](https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.stack-1?view)
 
 List와 작동 방식이 유사한 배열 기반 자료구조이다. 가장 마지막 위치에서만 데이터를 넣고, 마지막 위치에서만 데이터를 꺼낼 수 있다. 기능을 제한함으로서 최근에 저장한 데이터부터 순차적으로 꺼낸다는 사용 목적을 명확히 한 자료구조.
 
-## [Queue\<T>](https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.queue-1?view=net-8.0)
+## [Queue\<T>](https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.queue-1?view)
 
 Stack과 반대로 가장 먼저 넣은 데이터만 꺼낼 수 있는 자료구조. '머리'와 '꼬리'에 헤당하는 인덱스를 데이터를 넣고 꺼낼때마다 움직여주는 방식으로 구현되어있다(C#). 손님 줄은 가만히 서있는데 직원이 움직이면서 앞에서부터 응대하는 그림.
+
+## [Dictionary\<T>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view)
+
+Key와 Value의 데이터쌍의 Key를 Hash 함수를 통해 임의의 인덱스값으로 만들어서 배열의 해당 인덱스에 데이터를 저장하는 방식. (`table[Hase(key)]`) 그 작동 방식의 특징상 미리 넓은 배열을 준비할 필요가 있기 때문에 저장 공간을 많이 필요로 하는 대신, 일반적으로 탐색에 Hash 함수의 작동 시간만을 필요로 한다.
+
+### Hash table의 충돌
+
+일반적으로 준비된 배열보다 폭넓은 경우의 수를 갖는 Key를 좁은 인덱스값으로 해싱하다 보면 키 값이 겹칠 수가 있다. 일례로 '고객 전화번호'를 key로 사용하고 '전화번호 뒷자리'를 인덱스로 사용한다면, 전화번호 뒷자리가 같은 사람이 있을 수 있다.
+충돌에 대처하기 위해 데이터를 LinkedList로 구성하는 체이닝(Chaining), 미리 정해둔 다른 주소에 저장하는 개방 주소법(Open Addressing) 등을 사용한다. 이 경우 접근시 테이블의 해당 주소에 접근한 뒤 찾는 Key가 맞는지 확인 및 추가적인 순회가 필요하다.
 
 ## 기타
 
