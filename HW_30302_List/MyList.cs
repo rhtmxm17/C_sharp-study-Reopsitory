@@ -2,6 +2,8 @@
 {
     public class MyList<T>
     {
+        private const int DefaultCapacity = 10;
+
         // 현재 원소의 개수
         public int Count { get; private set; } = 0;
 
@@ -10,6 +12,9 @@
             get { return list.Length; }
             set 
             {
+                if(Capacity == value)
+                    return;
+
                 T[] myArray = new T[value];
                 list.CopyTo(myArray, 0);
                 list = myArray;
@@ -26,7 +31,7 @@
 
         public MyList()
         {
-            list = new T[10];
+            list = new T[DefaultCapacity];
         }
 
         public MyList(int capacity)
@@ -40,7 +45,10 @@
             // 현재 배열의 크기의 2배만큼 재할당
             if (Count >= list.Length)
             {
-                Capacity = list.Length * 2;
+                if(Capacity == 0) // 사용자가 0으로 만든 상황이라면 2배 해도 0이므로 예외
+                    Capacity = DefaultCapacity;
+                else
+                    Capacity *= 2;
             }
 
             // Count는 현재 원소의 개수, 곧 다음에 추가할 인덱스 번호를 의미한다.
@@ -80,7 +88,7 @@
 
         public void Clear()
         {
-            list = Array.Empty<T>();
+            list = new T[DefaultCapacity];
             Count = 0;
         }
 
