@@ -7,17 +7,17 @@
         // 현재 원소의 개수
         public int Count { get; private set; } = 0;
 
-        public int Capacity 
+        public int Capacity
         {
             get { return list.Length; }
-            set 
+            set
             {
-                if(Capacity == value)
+                if (Capacity == value)
                     return;
 
-                T[] myArray = new T[value];
-                list.CopyTo(myArray, 0);
-                list = myArray;
+                T[] newArray = new T[value];
+                list.CopyTo(newArray, 0);
+                list = newArray;
             }
         }
 
@@ -25,8 +25,18 @@
         // https://learn.microsoft.com/ko-kr/dotnet/csharp/programming-guide/indexers/
         public T this[int index]
         {
-            get { return list[index]; }
-            set { list[index] = value; }
+            get 
+            {
+                if (index >= Count)
+                    throw new ArgumentOutOfRangeException();
+                return list[index];
+            }
+            set
+            {
+                if (index >= Count)
+                    throw new ArgumentOutOfRangeException();
+                list[index] = value;
+            }
         }
 
         public MyList()
@@ -39,13 +49,20 @@
             list = new T[capacity];
         }
 
+        public MyList(T[] array)
+        {
+            list = new T[array.Length];
+            array.CopyTo(list, 0);
+            Count = array.Length;
+        }
+
         public void Add(T element)
         {
             // 배열의 크기를 넘어서 데이터를 추가할 경우,
             // 현재 배열의 크기의 2배만큼 재할당
             if (Count >= list.Length)
             {
-                if(Capacity == 0) // 사용자가 0으로 만든 상황이라면 2배 해도 0이므로 예외
+                if (Capacity == 0) // 사용자가 0으로 만든 상황이라면 2배 해도 0이므로 예외
                     Capacity = DefaultCapacity;
                 else
                     Capacity *= 2;
@@ -60,7 +77,7 @@
         {
             for (int i = 0; i < Count; i++)
             {
-                if(Equals(list[i], element))
+                if (Equals(list[i], element))
                 {
                     RemoveAt(i);
                     return true;
@@ -90,6 +107,13 @@
         {
             list = new T[DefaultCapacity];
             Count = 0;
+        }
+
+        public void FillDefault()
+        {
+            T[] defaults = new T[Capacity - Count];
+            defaults.CopyTo(list, Count);
+            Count = Capacity;
         }
 
         private T[] list;

@@ -1,5 +1,12 @@
 ﻿namespace HW_30303_Queue
 {
+    public class Queue<T> : MyQueue<T>
+    {
+        public Queue() { }
+
+        public Queue(T[] array) : base(array) { }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -9,8 +16,8 @@
 
             List<int> dates = ScheduleDayChecker(schadule, workTime);
 
-            Console.WriteLine($"입력: [{ string.Join(", ", schadule) }]");
-            Console.WriteLine($"출력: [{ string.Join(", ", dates) }]");
+            Console.WriteLine($"입력: [{string.Join(", ", schadule)}]");
+            Console.WriteLine($"출력: [{string.Join(", ", dates)}]");
         }
 
         /// <summary>
@@ -25,7 +32,7 @@
                 return new List<int>();
 
             List<int> completeDays = new(requireTimeData.Count);
-            Queue<int> workQueue = new Queue<int>(requireTimeData);
+            Queue<int> workQueue = new Queue<int>(requireTimeData.ToArray()); // MyQueue에 Array 기반 생성자만 준비됨
 
             int day = 1;
             int remainTime = dailyWorkTime;
@@ -36,7 +43,7 @@
                 remainTime -= workQueue.Dequeue();
 
                 // 작업시간이 남은 시간보다 크다면 날짜 진행 및 시간 보충
-                while (remainTime < 0) 
+                while (remainTime < 0)
                 {
                     day++;
                     remainTime += dailyWorkTime;

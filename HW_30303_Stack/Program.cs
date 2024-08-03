@@ -2,6 +2,7 @@
 {
     internal class Program
     {
+        public class Stack<T> : MyStack<T> { }
         static void Main(string[] args)
         {
             Console.WriteLine("괄호 쌍을 검사할 문자열을 입력 해 주세요.");

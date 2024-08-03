@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HW_30302_List\HW_30302_List.csproj" />
+  </ItemGroup>
+
 </Project>
