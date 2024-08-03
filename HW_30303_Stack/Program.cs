@@ -47,7 +47,12 @@
                         break;
                 }
             }
-            return true;
+
+            // 남은 열린 괄호가 있는지 검사
+            if(brackets.Count == 0)
+                return true;
+            else
+                return false;
         }
 
 
