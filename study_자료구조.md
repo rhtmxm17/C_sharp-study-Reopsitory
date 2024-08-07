@@ -74,10 +74,37 @@ Key와 Value의 데이터쌍의 Key를 Hash 함수를 통해 임의의 인덱스
 
 2차원 이상의 영역에 놓인 데이터를 거리가 가까운 데이터끼리 같은 노드의 아래에 속할 수 있도록 구성한 트리 자료구조이다.
 
-![R-tree](R-tree.svg)
+![R-tree](R-tree.svg)  
 By Skinkie, w:en:Radim Baca - Own work, Public Domain, <https://commons.wikimedia.org/w/index.php?curid=9938400>
 
 게임의 물체들은 논타겟 적중 판정 등 위치를 기반해 물체를 탐색해야할 상황이 자주 발생하고, 이럴 때 마다 모든 물체를 순회해서 위치를 확인하는 것은 매우 비효율적이다. 따라서 위 그림과 같이 위치를 기반으로 어느 영역에 속하는지를 기준으로 트리를 나눠서 판정하고자 하는 영역과 겹치지 않는 노드는 아예 배제할 수 있는것이 R트리의 특징이다.
+
+```pseudo code
+Search(RtreeNode node, Rect targetArea)
+{
+    // result는 중복을 불허하거나 더할때 제거해야 한다
+    Collection result;
+    if(node.isLeaf)
+    {
+        foreach(Node child in node)
+        {
+            if(IsOverlapped(child.area, targetArea))
+                result.Add(Search(child, targetArea));
+        }
+    }
+    else
+    {
+        foreach(Element item in node)
+        {
+            if(IsOverlapped(item.position, targetArea))
+                result.Add(item);
+        }
+    }
+    return result;
+}
+```
+
+(적중 대상을 찾는 경우를 가정)
 
 각 노드들은 자신의 범위, 부모 노드의 정보, 보유하고 있는 데이터(또는 자식 노드)로 구성되어 있다. 또한 가질 수 있는 데이터의 최소~최대 개수에 제한이 있어 데이터의 수가 변화할 때에는 노드가 나눠지거나 다른 작은 노드와 합쳐지기도 한다. 만약 데이터가 추가될 때에 해당 위치를 포함하는 노드가 없다면 가장 가까운 노드가 확장될 것이다.
 
