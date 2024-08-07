@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HW_30106_abstract.Weapon">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAAAAABAAAAAAAAAAAACAEAAAAAAFAAAAAAAA=</HashCode>
+      <FileName>HW30106.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HW_30106_abstract.HeavyMachinegun">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HW30106.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HW_30106_abstract.RocketLauncher">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>HW30106.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HW_30106_abstract.FlameShot">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HW30106.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
