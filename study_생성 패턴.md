@@ -118,9 +118,9 @@ public class GoblinBuilder
 
     ...
     
-    public Gobline Build()
+    public Goblin Build()
     {
-        return new Gobline(name, rightHand?.Clone(), leftHand?.Clone(), armor?.Clone());
+        return new Goblin(name, rightHand?.Clone(), leftHand?.Clone(), armor?.Clone());
     }
 }
 ```
